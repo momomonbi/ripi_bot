@@ -1446,9 +1446,12 @@ document.getElementById('apiKey').addEventListener('keydown', e => { if (e.key =
 // ================================================================
 // Chat UI helpers
 // ================================================================
+function isMobile() {
+  return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || ('ontouchstart' in window && window.innerWidth <= 768);
+}
 function handleKey(e) {
-  if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); return; }
-  if (e.key === 'Enter' && e.shiftKey) {
+  if (e.key === 'Enter' && !isMobile() && !e.shiftKey) { e.preventDefault(); sendMessage(); return; }
+  if (e.key === 'Enter') {
     requestAnimationFrame(() => autoResize(e.target));
   }
 }
