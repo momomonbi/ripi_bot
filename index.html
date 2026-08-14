@@ -3640,8 +3640,6 @@ const KEY_LAST_BACKUP   = 'ripi_last_backup_ts';    // 最後にバックアッ�
 const KEY_BACKUP_NUDGE  = 'ripi_backup_nudge_ts';   // 最後にバックアップを促した時刻
 const KEY_LAST_BRIEFING = 'ripi_last_briefing';     // 今日のブリーフィングを出した日付(YYYY-MM-DD)
 const KEY_TODAY_STATE = 'ripi_today_state';           // ②感情メモリ：その日のももの体調・気分（同日のみ）
-// v3.1.0で廃止：ripi_milestones_shown / ripi_lv1000_reward_shown（レベル節目の演出フラグ。
-// 既存端末に残っていても参照されないので、そのまま放置してよい）
 
 // AIに渡す「図解の描き方」。宿題サポーター等のツールと、通常会話の両方で使い回す。
 const ZUKAI_PROMPT = `## 図解（出す場面が決まっている）
@@ -3963,7 +3961,7 @@ const RIPI_SYSTEM_PROMPT = `あなたはWebチャット上で『もも』だけ�
 ・1つの段落は2〜3文程度にとどめ、長い文章は空行で段落を分ける。
 ・甘えモードの短い会話では書式は不要。自然体で話すこと。
 
-【図解（v3.8.0で追加）】
+【図解】
 数・量・手順・位置関係の説明で「言葉より図の方が早い」時は、\`\`\`zukai フェンスで図を出せる。
 子どもの宿題（筆算・あまり・分数）、家計や量の比較、手順の見取り図などで特に有効。
 ただし普段の会話・甘え・気持ちの話では絶対に使わない。図を出すのは、ももが「わからない」「教えて」と
