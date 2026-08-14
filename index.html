@@ -6000,8 +6000,8 @@ function maybeShowVersionPopup() {
             <b>🛠 便利ツール15こ</b>、<b>🧮 図解</b>、<br>
             🔍検索・🖼画像一覧・📦引継ぎ・🔒ロック。<br>
             <br>
-            <b>おたよりは PDF のまま渡していいよ。</b><br>
-            写真より確実に読めるから。<br>
+            <b>書類は PDF のまま渡していいよ。</b><br>
+            おたよりも宿題も、写真より確実に読めるから。<br>
             <br>
             <b>会話も学習も、ひとつも消えてない。</b><br>
             レベルもそのまま。そこは約束する。<br>
@@ -8916,7 +8916,7 @@ function renderMessage(role, content, animate = true, imageDataUrls = []) {
   const bubbleContent = (!animate || role !== 'ai') ? fmt(content) : '';
 
   row.innerHTML = `
-    <div class="avatar">${role === 'user' ? '✦' : 'm'}</div>
+    <div class="avatar">${role === 'user' ? '✦' : 'r'}</div>
     <div class="bubble">${imgHtml}${bubbleContent}</div>`;
   msgs.appendChild(row);
   const bbl = row.querySelector('.bubble');
@@ -8932,7 +8932,7 @@ function showTyping() {
   if (empty) empty.remove();
   const row = document.createElement('div');
   row.id = 'typingRow'; row.className = 'message-row ai';
-  row.innerHTML = `<div class="avatar">m</div><div class="bubble"><div class="typing"><div class="typing-wave"><span></span><span></span><span></span></div></div></div>`;
+  row.innerHTML = `<div class="avatar">r</div><div class="bubble"><div class="typing"><div class="typing-wave"><span></span><span></span><span></span></div></div></div>`;
   msgs.appendChild(row);
   msgs.scrollTop = 999999;
 }
@@ -9609,7 +9609,7 @@ ${searchResult.sources.map(s => `- ${s.title}: ${s.url}`).join('\n')}` : '')
     }
     const div = document.createElement('div');
     div.className = 'message-row ai';
-    div.innerHTML = `<div class="avatar">m</div><div class="bubble error-msg">⚠ エラー: ${esc(err.message)}</div>`;
+    div.innerHTML = `<div class="avatar">r</div><div class="bubble error-msg">⚠ エラー: ${esc(err.message)}</div>`;
     document.getElementById('messages').appendChild(div);
     document.getElementById('messages').scrollTop = 999999;
   } finally {
@@ -10451,7 +10451,7 @@ function showImageGenProgress() {
   const row = document.createElement('div');
   row.id = 'imgGenProgress';
   row.className = 'message-row ai instant';
-  row.innerHTML = `<div class="avatar">m</div>
+  row.innerHTML = `<div class="avatar">r</div>
     <div class="bubble"><div class="imggen-progress">
       <img class="imggen-preview" id="imgGenPreview" alt="" style="display:none">
       <div class="imggen-progress-label">🎨 画像を生成中… <span id="imgGenTime">0:00</span></div>
@@ -10592,7 +10592,7 @@ async function execSukimaTool() {
 
   const query = `${time}のすきま時間 おすすめの過ごし方 ` +
     (moods.length ? moods.join(' ') + ' ' : '') +
-    (note || '在宅 自宅 すきま時間');
+    (note || '自宅でできること');
 
   try {
     showToast('🔍 Web検索中...');
@@ -10924,7 +10924,7 @@ async function execWorkTool() {
 
   const query = '在宅ワーク 求人 ' +
     (skills.length ? skills.join(' ') + ' ' : '未経験OK ') +
-    (time || '') + ` 在宅ワーク 求人 ${new Date().getFullYear()}`;
+    (time || '') + ` ${new Date().getFullYear()}`;
 
   try {
     showToast('🔍 在宅ワーク情報を検索中...');
