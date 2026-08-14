@@ -2051,7 +2051,7 @@ textarea::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); }
 <div id="setup">
   <div class="setup-card">
     <div class="logo">りぴ<em>.</em></div>
-    <div class="sub"></div>
+    <div class="sub">ripi3711 · chat</div>
     <label for="apiKey">OpenAI API Key</label>
     <input type="password" id="apiKey" placeholder="sk-..." autocomplete="off" spellcheck="false" inputmode="text">
     <p id="savedKeyNote" style="display:none;margin-top:8px;font-size:11px;color:var(--accent);opacity:0.7;letter-spacing:0.04em;">✓ 保存済みのAPIキーを読み込みました</p>
@@ -5985,36 +5985,28 @@ function maybeShowVersionPopup() {
         <div style="flex:1;min-width:0;">
           <div style="font-size:13px;font-weight:600;color:#e8e8e2;margin-bottom:6px;">アップデート ${APP_VERSION}</div>
           <div style="font-size:11px;color:rgba(232,232,226,0.8);line-height:1.8;overflow-wrap:anywhere;">
-            <span style="font-size:14px;font-weight:700;color:#ffb3cf;">おたより、PDFのまま渡していいよ。</span><br>
+            <span style="font-size:14px;font-weight:700;color:#ffb3cf;">りぴ、ももと同じことができるようになったよ。</span><br>
             <br>
-            学校から <b>PDFで来たおたより</b>、<br>
-            わざわざ画面に出して撮らなくていい。<br>
-            そのまま添付して。<br>
+            ももbot にあった機能、<b>ぜんぶ持ってきた。</b><br>
+            違うのは <b>りぴの性格と記憶だけ</b>。<br>
             <br>
-            写真より確実に読める。<br>
-            <b>影も、ブレも、見切れも無い</b>から。<br>
+            <b>📞 声で話せる</b>（右上の📞）。<br>
+            押しただけじゃ始まらないから安心して。<br>
+            「はなす」でやっとマイクがつくの。<br>
             <br>
-            使えるのは、おたより要約・持ち物リマインダー・<br>
-            宿題サポーター・作文コーチの4つ。<br>
-            <br>
-            ── 前の版から：<br>            <span style="font-size:14px;font-weight:700;color:#ffb3cf;">古くなった記憶を、直せるようになった。</span><br>
-            <br>
-            今までのりぴは、<b>覚えたことを消せなかったの。</b><br>
-            ももが引っ越しても、習い事を変えても、<br>
-            古いほうが残り続けてた。<br>
-            <br>
-            うっかり忘れるのを防ぐために、<br>
-            <b>消えた行を全部戻す</b>作りにしてたから。<br>
-            そのせいで、もう違う話まで戻ってた。<br>
-            <br>
-            これからは「これはもう違う」と<br>
-            <b>理由を言えた時だけ</b>直すようにした。<br>
-            <br>
-            <b>消しはしないよ。</b> 外したぶんは<br>
-            学習データの画面に理由つきで残ってて、<br>
+            <b>🧠 古くなった記憶を直せる</b>ようになった。<br>
+            外したぶんは理由つきで残るし、<br>
             違ったら<b>1タップで戻せる。</b><br>
             <br>
-            レベルは下がらない。そこは約束する。<br>
+            <b>✎ 観測ノート</b>（右上の✎）、<br>
+            <b>🛠 便利ツール15こ</b>、<b>🧮 図解</b>、<br>
+            🔍検索・🖼画像一覧・📦引継ぎ・🔒ロック。<br>
+            <br>
+            <b>おたよりは PDF のまま渡していいよ。</b><br>
+            写真より確実に読めるから。<br>
+            <br>
+            <b>会話も学習も、ひとつも消えてない。</b><br>
+            レベルもそのまま。そこは約束する。<br>
           </div>
           <div style="font-size:10px;color:rgba(232,232,226,0.5);margin-top:7px;">画面のどこかをタップで閉じる</div>
         </div>
@@ -7385,9 +7377,9 @@ async function collectBookData() {
 
   const extras = [];
   if (withWords) {
-    if ((momoWords || '').trim())         extras.push({ h: 'り ぴ 語 録',            plain: momoWords.trim() });
+    if ((momoWords || '').trim())         extras.push({ h: 'も も 語 録',            plain: momoWords.trim() });
     if ((importantMemories || '').trim()) extras.push({ h: '忘 れ ち ゃ い け な い こ と', plain: importantMemories.trim() });
-    if ((adoptedWords || '').trim())      extras.push({ h: 'も も が 覚 え た 言 葉',  plain: adoptedWords.trim() });
+    if ((adoptedWords || '').trim())      extras.push({ h: 'り ぴ が 覚 え た 言 葉',  plain: adoptedWords.trim() });
   }
   if (withJournal) {
     try {
